@@ -1,0 +1,20 @@
+# Site settings
+title: 윤진섭의 포트폴리오
+description: 안녕하세요 개발자 윤진섭의 포트폴리오입니다.
+# baseurl: "/particle" # the subpath of your site, e.g. /blog
+# url: "localhost:3000" # the base hostname & protocol for your site e.g. http://willianjusten.com.br
+
+# User settings
+username: 윤진섭
+user_description: 안녕하세요 백엔드 개발자 윤진섭입니다. 대학교 3학년 소프트웨어 융합을 복수 전공하며 개발자로서 처음으로 꿈을 키웠습니다.
+user_title: Software Developer
+email: wlstjq447@naver.com
+twitter_username: jinseopYun
+github_username: jinseopYun
+gplus_username: jinseopYun
+
+# Google-analytics
+google-analytics:
+  id: ""
+
+exclude: ["package.json", "src", "node_modules"]
