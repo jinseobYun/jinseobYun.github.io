@@ -3899,12 +3899,6 @@ sup {
 .user p {
   font-size: 16px;
 }
-@media only screen and (min-width: 550px) {
-  .user {
-    flex-wrap: nowrap;
-    font-size: 75px;
-  }
-}
 .user-details {
   text-align: center;
   margin: 5px auto;
