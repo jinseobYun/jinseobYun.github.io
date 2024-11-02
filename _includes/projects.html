@@ -1,5 +1,6 @@
 <style>
 /* 모달 스타일 */
+/* 모달 스타일 */
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -10,7 +11,7 @@
   display: none;
   z-index: 1000;
 }
-/* 모달 스타일 */
+
 .modal {
   position: fixed;
   display: none;
@@ -31,6 +32,11 @@
 .modal-content {
   font-size: 0.9rem;
   line-height: 1.5;
+  white-space: pre-wrap; /* 줄 바꿈 및 공백 유지 */
+}
+
+.modal-content p {
+  margin-bottom: 15px; /* 문단 간의 간격 설정 */
 }
 
 .close-btn {
@@ -51,40 +57,39 @@
 
 </style>
 
-<!-- 기존 HTML 코드 위에 추가 -->
 <div class="modal-overlay" id="modalOverlay"></div>
 <div class="modal" id="modal">
   <div class="modal-content">
-    <h2>프로젝트 개요 필수사항</h2>
-    <p><strong>- 목표:</strong></p>
-    <p><strong>- 배경:</strong></p>
-    <p><strong>- 주요 기능:</strong></p>
+    <h3>✔️ 프로젝트 개요 필수사항</h3>
+    <p class="goal"></p>
+    <p class="background"></p>
+    <p class="features"></p>
 
     <h3>✔️ 담당 역할 및 기여 필수사항</h3>
-    <p><strong>- 역할:</strong></p>
-    <p><strong>- 기여:</strong></p>
+    <p class="role"></p>
+    <p class="contribution"></p>
 
     <h3>✔️ 사용 기술/이유 필수사항</h3>
-    <p><strong>- 사용 기술:</strong></p>
-    <p><strong>- 선택 이유:</strong></p>
+    <p class="tech"></p>
+    <p class="reason"></p>
 
     <h3>✔️ 구현 사항 필수사항</h3>
-    <p>- 프로젝트의 중점적인 기능을 기재해주세요.</p>
-    <p>- 프로젝트의 핵심 구현사항을 기술해주세요.</p>
+    <p class="key-function"></p>
+    <p class="key-implementation"></p>
 
     <h3>✔️ 문제 해결 사례 선택사항</h3>
-    <p><strong>- 문제:</strong></p>
-    <p><strong>- 해결 방법:</strong></p>
+    <p class="problem"></p>
+    <p class="solution"></p>
 
     <h3>✔️ 프로젝트 성과 및 결과 필수사항</h3>
-    <p><strong>- 성과:</strong></p>
-    <p><strong>- 결과:</strong></p>
+    <p class="achievement"></p>
+    <p class="result"></p>
 
     <h3>✔️ 프로젝트 회고 선택사항</h3>
-    <p><strong>- 아쉬웠던 점:</strong></p>
-    <p><strong>- 개선 방안:</strong></p>
-    <p><strong>- 새롭게 알게 된 지식 및 개발 역량:</strong></p>
-    <p><strong>- 깨달은 점:</strong></p>
+    <p class="reflection"></p>
+    <p class="improvement"></p>
+    <p class="knowledge"></p>
+    <p class="realization"></p>
 
     <button class="close-btn" id="closeBtn">닫기</button>
   </div>
@@ -93,58 +98,95 @@
 
 
 
-<div class="user-details">
-  <h1> 주요 프로젝트 </h1>
-</div>
-<div class="user-projects">
+div class="user-projects">
   <div class="images-right">
-    <img alt="mountains" src="{{ "https://github.com/user-attachments/assets/c4818f7d-eb1f-483a-b95e-9380556b3084" | prepend: site.baseurl }}" />
+    <img alt="mountains" src="https://github.com/user-attachments/assets/c4818f7d-eb1f-483a-b95e-9380556b3084" />
   </div>
-  <div class="contents">
-    <h3> Triplet </h3>
+  <div class="contents" 
+       data-goal="여행 중 지출을 효율적으로 관리하고, 다른 여행자들의 데이터를 참고하여 예산 계획을 쉽게 세울 수 있도록 돕는 여행 예산 관리 애플리케이션입니다. " 
+       data-background=" 여행을 처음 준비하는 사람들이 예상 비용을 파악하는 데 어려움을 겪고, 여행 중 예산 초과나 지출 내역을 기억하지 못하는 문제가 빈번하게 발생합니다. 최신 정보의 부족과 관리의 어려움으로 인해 발생하는 불편을 해결하기 위해 기획되었습니다." 
+       data-features="다중 통화 계좌 관리, 여행 계좌 개설, QR 간편 결제, 원화 송금 및 환전, 모임 통장, 카테고리별 예산 설정, 실시간 예산 사용 내역 저장, 여행지 및 예산 추천, 자동 분류 및 실시간 지출 확인, 여행 예산 내역 공유"
+       data-role="팀장, 인프라 및 백엔드 개발 담당" 
+       data-contribution="CI/CD 파이프라인 구축, Docker 및 클라우드 환경 배포,외부 API를 활용한 환율 정보 조회 및 환전 API 구현, Redis를 활용한 환율 데이터 캐싱 및 Lua Script를 통한 원자성 보장" 
+       data-tech="Spring Boot, Docker, Redis, Jenkins, GitLab, AWS EC2, Ubuntu, Spring Data JPA, MySQL"
+       data-reason="
+       Docker: 일관된 환경에서 애플리케이션을 배포하기 위해
+       Redis: 빠른 데이터 조회
+       Lua Script: 원자성 보장"
+       data-key-function="사용자의 나이, 성별, 여행 국가 등을 기반으로 다른 사용자가 공유한 예산 데이터를 제공하고, 자동으로 결제 내역을 카테고리별로 분류하여 관리
+       여행 중 발생하는 지출 내역을 실시간으로 저장하고, 환율 변동에 대응해 자동으로 갱신" 
+       data-key-implementation="Lua Script를 활용한 Redis 데이터의 원자성 보장
+       Jenkins와 GitLab을 통한 자동화된 CI/CD 파이프라인 구축"
+       data-problem="외부 API를 통해 환율 데이터를 받아와 Redis에 저장하는 과정에서, Redis가 단일 스레드 기반으로 작동하여 개별 명령어의 원자성은 보장되지만, 복수의 명령어를 순차적으로 실행할 때 완전한 원자성이 보장되지 않을 수 있다는 점을 인식했습니다. 우리가 만드는 프로젝트가 핀테크 서비스를 다루고 있어 결제, 송금, 충전 등 실제 돈이 오가는 시스템이기 때문에, 정확한 환율 데이터를 제공하는 것이 매우 중요하다고 생각했습니다. 이런 특성상, 조금의 오류 가능성도 배제할 수 없다고 생각했습니다." 
+       data-solution="이를 해결하기 위해 Lua Script를 사용해 환율 삭제와 삽입 명령어를 하나의 트랜잭션으로 묶어 데이터 일관성과 원자성을 확보했습니다. 이 과정에서 데이터 무결성을 지키는 방법을 깊이 고민하며 구현할 수 있었습니다."
+       data-achievement="클라우드 환경에서 Jenkins를 활용해 CI/CD 파이프라인을 구축하여 팀원들이 각 브랜치에 코드를 병합할 때 자동으로 배포되도록 설정함" 
+       data-result="프론트엔드와 백엔드가 원활하게 통합되어 테스트 및 배포 과정이 효율적으로 이루어짐"
+       data-reflection="프로젝트 초기에는 Docker 및 클라우드 환경에 대한 지식이 부족해 설정 과정에서 많은 시행착오를 겪었던 점이 아쉬웠음"
+       data-improvement="앞으로는 인프라 관련 기술을 사전에 충분히 학습하고, 계획적으로 적용하여 개발 및 배포 과정의 효율성을 높일 계획"
+       data-knowledge="CI/CD 파이프라인의 중요성과 클라우드 환경에서의 효율적인 리소스 관리, 데이터 일관성을 유지하는 기법에 대한 이해를 깊이 배움"
+       data-realization="팀장으로서 팀을 이끌며 맡은 역할에 대한 책임감의 중요성을 깨달았고, 문제 해결을 위해 끊임없이 노력하는 자세가 성장을 이끈다는 것을 체감함">
+    <h3>Triplet</h3>
     <h4>프로젝트 개요</h4>
-    <p>여행 예산 계획과 여행 결제 내역을 카테고리 별로 분류해 예산 관리를 돕고, 다른 사람의 여행 예산 사용 내역을 참고할 수 있어 예산 계획에 도움을 주는 여행 예산 관리 애플리케이션 입니다.</p>
-    <p> Spring Boot와 React.js, PWA 를 활용하여 웹 애플리케이션을 개발했습니다.</p>
+    <p>여행 예산 계획과 여행 결제 내역을 카테고리별로 분류해 예산 관리를 돕고, 다른 사람의 여행 예산 사용 내역을 참고할 수 있어 예산 계획에 도움을 주는 여행 예산 관리 애플리케이션입니다.</p>
+    <p>Spring Boot와 React.js, PWA를 활용하여 웹 애플리케이션을 개발했습니다.</p>
     <h4>역할 : 팀장, 인프라, 백엔드</h4>
     <h4>주요 개발</h4>
-<ul>
-  <li>EC2 Linux 환경에서 Jenkins, GitLab, Docker를 활용한 CI/CD 파이프라인 구축</li>
-  <li>외부 API를 활용한 환율 조회 및 환전 기능 구현</li>
-  <li>Redis를 활용한 환율 데이터 캐싱 및 Spring 스케줄러로 자동 갱신</li>
-  <li>Lua Script로 환율 삭제 및 삽입을 트랜잭션으로 묶어 원자성 보장</li>
-</ul>
-      <p>🗺️ 여행 계좌 개설 및 관리</p>
-      <p>📱 QR 간편 결제 기능</p>
-      <p>💱 환전 및 외화 계좌 관리</p>
-      <p>👥 모임 통장 기능 제공</p>
-      <p>📊 카테고리별 예산 설정</p>
-      <p>💳 결제 시 카테고리 자동 분류 및 실시간 지출 내역 확인</p>
-      <p>📤 여행 예산 내역 공유 기능</p>
+    <ul>
+      <li>EC2 Linux 환경에서 Jenkins, GitLab, Docker를 활용한 CI/CD 파이프라인 구축</li>
+      <li>외부 API를 활용한 환율 조회 및 환전 기능 구현</li>
+      <li>Redis를 활용한 환율 데이터 캐싱 및 Spring 스케줄러로 자동 갱신</li>
+      <li>Lua Script로 환율 삭제 및 삽입을 트랜잭션으로 묶어 원자성 보장</li>
+    </ul>
+    <p>🗺️ 여행 계좌 개설 및 관리</p>
+    <p>📱 QR 간편 결제 기능</p>
+    <p>💱 환전 및 외화 계좌 관리</p>
+    <p>👥 모임 통장 기능 제공</p>
+    <p>📊 카테고리별 예산 설정</p>
+    <p>💳 결제 시 카테고리 자동 분류 및 실시간 지출 내역 확인</p>
+    <p>📤 여행 예산 내역 공유 기능</p>
     <a class="project-link" href="https://github.com/jinseobYun/triplet">깃허브 이동</a>
   </div>
 </div>
 
+<!-- 두 번째 프로젝트도 마찬가지로 빈 문자열로 설정 -->
 <div class="user-projects">
   <div class="images-left">
-    <img alt="mountains" src="{{ "https://github.com/jinseobYun/jinseobYun.github.io/assets/103829767/b97669a3-0d52-4b52-9a61-ea9036e44d3f" | prepend: site.baseurl }}" />
+    <img alt="mountains" src="https://github.com/jinseobYun/jinseobYun.github.io/assets/103829767/b97669a3-0d52-4b52-9a61-ea9036e44d3f" />
   </div>
-  <div class="contents-right">
-    <h3> SSAFIT MALL </h3>
+  <div class="contents" 
+       data-goal="" 
+       data-background="" 
+       data-features=""
+       data-role="" 
+       data-contribution="" 
+       data-tech=""
+       data-reason=""
+       data-key-function="" 
+       data-key-implementation=""
+       data-problem="" 
+       data-solution=""
+       data-achievement="" 
+       data-result=""
+       data-reflection="" 
+       data-improvement=""
+       data-knowledge="" 
+       data-realization="">
+    <h3>SSAFIT MALL</h3>
     <h4>프로젝트 개요</h4>
     <p>중고거래 사기 피해 예방을 위한 헬스 용품 및 운동 보조제 중고 거래 쇼핑몰 사이트입니다.</p>
-    <p> Spring Boot 를 사용해 구현한 REST API 와  Vue.js 로 구현한 클라이언트로 구성된 Single Page Application 입니다. </p>
-    <h4>역할 : 팀장 </h4>
-    <h4>주요 개발 : Full-Stack </h4>
-    <li>DB 테이블 설계</li>
-    <li>깃 프로젝트 관리</li>
-    <li>아래 기능의 REST API 설계와 Axios 비동기통신 구현</li>
+    <p>Spring Boot를 사용해 구현한 REST API와 Vue.js로 구현한 클라이언트로 구성된 Single Page Application입니다.</p>
+    <h4>역할 : 팀장</h4>
+    <h4>주요 개발 : Full-Stack</h4>
     <ul>
-      <p>📝 판매자 상품 CRUD</p>
-      <p>💳 구매자 상품 조회 및 주문, 카카오 페이 결제</p>
-      <p>❤️ 관심 상품 기능 </p>
-      <p>🛠️ 관리자 페이지 ( 유저, 상품 관리 기능 )</p>
-      <p>🤖 챗 지피티 API 챗봇 기능</p>
+      <li>DB 테이블 설계</li>
+      <li>깃 프로젝트 관리</li>
+      <li>아래 기능의 REST API 설계와 Axios 비동기 통신 구현</li>
     </ul>
+    <p>📝 판매자 상품 CRUD</p>
+    <p>💳 구매자 상품 조회 및 주문, 카카오 페이 결제</p>
+    <p>❤️ 관심 상품 기능</p>
+    <p>🛠️ 관리자 페이지 (유저, 상품 관리 기능)</p>
+    <p>🤖 챗 지피티 API 챗봇 기능</p>
     <a class="project-link" href="https://github.com/jinseobYun/ssafitmall">깃허브 이동</a>
   </div>
 </div>
@@ -153,22 +195,58 @@
 // 모달 열기와 닫기 기능
 document.querySelectorAll('.user-projects').forEach(content => {
   content.addEventListener('click', () => {
+    // 데이터 속성에서 정보 가져오기
+    const goal = content.getAttribute('data-goal');
+    const background = content.getAttribute('data-background');
+    const features = content.getAttribute('data-features');
+    const role = content.getAttribute('data-role');
+    const contribution = content.getAttribute('data-contribution');
+    const tech = content.getAttribute('data-tech');
+    const reason = content.getAttribute('data-reason');
+    const keyFunction = content.getAttribute('data-key-function');
+    const keyImplementation = content.getAttribute('data-key-implementation');
+    const problem = content.getAttribute('data-problem');
+    const solution = content.getAttribute('data-solution');
+    const achievement = content.getAttribute('data-achievement');
+    const result = content.getAttribute('data-result');
+    const reflection = content.getAttribute('data-reflection');
+    const improvement = content.getAttribute('data-improvement');
+    const knowledge = content.getAttribute('data-knowledge');
+    const realization = content.getAttribute('data-realization');
+
+    // 모달에 데이터 삽입
+    document.querySelector('.modal-content .goal').innerText = `- 목표: ${goal}`;
+    document.querySelector('.modal-content .background').innerText = `- 배경: ${background}`;
+    document.querySelector('.modal-content .features').innerText = `- 주요 기능: ${features}`;
+    document.querySelector('.modal-content .role').innerText = `- 역할: ${role}`;
+    document.querySelector('.modal-content .contribution').innerText = `- 기여: ${contribution}`;
+    document.querySelector('.modal-content .tech').innerText = `- 사용 기술: ${tech}`;
+    document.querySelector('.modal-content .reason').innerText = `- 선택 이유: ${reason}`;
+    document.querySelector('.modal-content .key-function').innerText = `- 중점적인 기능: ${keyFunction}`;
+    document.querySelector('.modal-content .key-implementation').innerText = `- 핵심 구현 사항: ${keyImplementation}`;
+    document.querySelector('.modal-content .problem').innerText = `- 문제: ${problem}`;
+    document.querySelector('.modal-content .solution').innerText = `- 해결 방법: ${solution}`;
+    document.querySelector('.modal-content .achievement').innerText = `- 성과: ${achievement}`;
+    document.querySelector('.modal-content .result').innerText = `- 결과: ${result}`;
+    document.querySelector('.modal-content .reflection').innerText = `- 아쉬웠던 점: ${reflection}`;
+    document.querySelector('.modal-content .improvement').innerText = `- 개선 방안: ${improvement}`;
+    document.querySelector('.modal-content .knowledge').innerText = `- 새롭게 알게 된 지식: ${knowledge}`;
+    document.querySelector('.modal-content .realization').innerText = `- 깨달은 점: ${realization}`;
+
+    // 모달 표시
     document.getElementById('modalOverlay').style.display = 'block';
     document.getElementById('modal').style.display = 'block';
   });
 });
 
-// 모달 닫기 버튼 이벤트
 document.getElementById('closeBtn').addEventListener('click', () => {
   document.getElementById('modalOverlay').style.display = 'none';
   document.getElementById('modal').style.display = 'none';
 });
 
-// 모달 오버레이 클릭 시 닫기 이벤트
 document.getElementById('modalOverlay').addEventListener('click', () => {
   document.getElementById('modalOverlay').style.display = 'none';
   document.getElementById('modal').style.display = 'none';
 });
-
 
 </script>
