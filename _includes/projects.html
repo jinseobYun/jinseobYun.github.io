@@ -1,5 +1,5 @@
 <style>
-  /* 모달 스타일 */
+/* 모달 스타일 */
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -45,6 +45,9 @@
 .close-btn:hover {
   background-color: #d32f2f;
 }
+
+
+
 </style>
 
 <!-- 기존 HTML 코드 위에 추가 -->
@@ -146,7 +149,7 @@
 </div>
 
 <script>
-  // 모달 열기와 닫기 기능
+// 모달 열기와 닫기 기능
 document.querySelectorAll('.contents').forEach(content => {
   content.addEventListener('click', () => {
     document.getElementById('modalOverlay').style.display = 'block';
@@ -154,14 +157,17 @@ document.querySelectorAll('.contents').forEach(content => {
   });
 });
 
+// 모달 닫기 버튼 이벤트
 document.getElementById('closeBtn').addEventListener('click', () => {
   document.getElementById('modalOverlay').style.display = 'none';
   document.getElementById('modal').style.display = 'none';
 });
 
+// 모달 오버레이 클릭 시 닫기 이벤트
 document.getElementById('modalOverlay').addEventListener('click', () => {
   document.getElementById('modalOverlay').style.display = 'none';
   document.getElementById('modal').style.display = 'none';
 });
+
 
 </script>
