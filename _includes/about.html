@@ -1,7 +1,7 @@
 <style>
   .profile {
     display: flex;
-    align-items: center;
+    align-items: self-end;
     justify-content: space-around;
     margin: 0 10%;
   }
@@ -19,6 +19,15 @@
     text-align: left;
     padding: 20px;
   }
+  hr {
+  height: 2px; /* 두께 설정 */
+  background-color: #000; /* 색상 설정 */
+  border: none; /* 기본 테두리 제거 */
+  }
+  .container-skill {
+    display: flex;
+    justify-content: space-around;
+  }
 </style>
 
 <div class="user-details">
@@ -29,16 +38,16 @@
     </div>
     <div class="profile-info">
       <h1 style="font-size: 2.5em; font-weight: bold; margin-bottom: 10px;">윤진섭</h1>
-      <p style="font-size: 1.2em; line-height: 1.6; margin-bottom: 15px;">
+      <p style="font-size: 1.1em; line-height: 1.6; margin-bottom: 15px;">
         안녕하세요. 새로운 것을 배울 때마다 성장의 기쁨을 느끼는 <strong>백엔드 개발자 윤진섭</strong>입니다.
       </p>
-      <p style="font-size: 0.7em; line-height: 1.5; margin-bottom: 10px;">
+      <p style="font-size: 0.8em; line-height: 1.5; margin-bottom: 10px;">
         대학교 3학년 때 컴퓨터공학을 복수전공하며 처음으로 코딩을 접하게 되었습니다.
       </p>
-      <p style="font-size: 0.7em; line-height: 1.5; margin-bottom: 10px;">
+      <p style="font-size: 0.8em; line-height: 1.5; margin-bottom: 10px;">
         이후 알고리즘 문제를 해결하는 과정에서 직접 해결 방식을 고민하고 충분한 생각 끝에 작성한 코드가 문제를 풀어내는 순간에 코딩에 재미를 느꼈고, 개발자로서의 꿈을 키우게 되었습니다.
       </p>
-      <p style="font-size: 0.7em; line-height: 1.5; margin-bottom: 10px;">
+      <p style="font-size: 0.8em; line-height: 1.5; margin-bottom: 10px;">
         현재는 백엔드 개발자로서의 꿈을 실현하기 위해 삼성청년소프트웨어아카데미(SSAFY)에 입과하여 끊임없이 배우며 성장하고 있습니다.
       </p>
       <p style="font-weight: bold; margin-top: 15px;">📧 Email: 
@@ -56,31 +65,53 @@
   </div>
 </div>
   <div class="user">
-    <div class="tech">
-      <h2>Front-End</h2>
-      <i class="devicon-html5-plain-wordmark colored"></i>
-      <i class="devicon-css3-plain-wordmark colored"></i>
-      <i class="devicon-javascript-plain colored"></i>
-      <i class="devicon-bootstrap-plain-wordmark colored"></i>
-      <i class="devicon-vuejs-plain-wordmark colored"></i>
-
+    <h1>기술 스택</h1>
+    <hr/>
+    <div class="container-skill">
+      <div class="skills">
+        <h4>Backend</h4>
+        <li><p>Spring</p> / <p>Spring Boot</p></li>
+        <li><p>Spring Data JPA</p> / <p>My Batis</p></li>
+      </div>
+      <div class="skills">
+        <h4>Programming Languages</h4>
+        <li>Java</li>
+        <li>Python</li>
+        <li>JavaScript</li>
+      </div>
+ 
     </div>
-    <div class="tech">
-      <h2>Back-End</h2>
-      <i class="devicon-java-plain-wordmark colored"></i>
-      <i class="devicon-mysql-plain-wordmark colored"></i>
-      <img src="https://github.com/jinseobYun/jinseobYun.github.io/assets/103829767/bb6bbdb3-541f-4c9c-bb22-cb519b68f854" style="width: 60px;height: 60px">
-      <img src="https://github.com/jinseobYun/jinseobYun.github.io/assets/103829767/ab3b09b2-df78-42b1-b7d8-0f5e53403947" style="width: 120px;height: 120px">
+    <div class="container-skill">
+      <div class="skills">
+        <h4>Deployment / OS</h4>
+        <li><p>Docker</p> / <p>Docker Compose</p></li>
+        <li><p>Jenkins</p></li>
+        <li><p>AWS EC2</p> / <p>Ubuntu</p></li>
+      </div>
 
-
+      <div class="skills">
+        <h4>Tools</h4>
+        <li><p>Intelij</p> / <p>Eclipse</p></li>
+        <li><p>VSCode</p> / <p>WebStorm</p></li>
+      </div>
     </div>
-    <div class="tech">
-      <h2>Tools</h2>
-      <i class="devicon-git-plain colored"></i>
-      <img src="https://github.com/jinseobYun/jinseobYun.github.io/assets/103829767/4851242f-8c0c-47ba-8fcc-44c445129e22" style="width: 60px;height: 60px">
-      <img src="https://github.com/jinseobYun/jinseobYun.github.io/assets/103829767/2d74902b-316a-4d99-9ad4-21f1d6a57b27" style="width: 60px;height: 60px">
-      <img src="https://github.com/jinseobYun/jinseobYun.github.io/assets/103829767/26a11d60-23fd-41e8-99d9-3ead8caf1054" style="width: 70px;height: 70px">
-      <img src="https://github.com/jinseobYun/jinseobYun.github.io/assets/103829767/ce945c52-4956-4769-9f27-ddfaa28cf305" style="width: 60px;height: 60px">
 
+    <div class="container-skill">
+      <div class="skills">
+        <h4>Collaborations</h4>
+        <li><p>GitHub</p> / <p>GitLab</p></li>
+        <li><p>Notion</p> / <p>Jira</p></li>
+      </div>
+      <div class="skills">
+        <h4>DB / Cache</h4>
+        <li><p>MySQL</p> / <p>Postgres</p></li>
+        <li><p>Redis</p> / <p>ElasticSearch & Logstash</p></li>
+      </div>
+  
     </div>
+
+      
+    </div>
+  </div>
+
 </div>
