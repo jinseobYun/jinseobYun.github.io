@@ -76,6 +76,8 @@
   background-color: #fff;
   padding: 20px;
   border-radius: 8px;
+  max-height: 80vh; /* 최대 높이 설정 */
+  overflow-y: auto; /* 모달에 스크롤 추가 */
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
   display: none;
   z-index: 20;
@@ -338,7 +340,7 @@
 </div>
 
 <div class="user-projects">
-  <div class="images-right">
+  <div class="images-left">
     <img alt="mountains" src="https://github.com/user-attachments/assets/c4818f7d-eb1f-483a-b95e-9380556b3084" />
   </div>
   <div class="contents" >        <h3>Triplet</h3>
@@ -362,7 +364,7 @@
     <p>📤 여행 예산 내역 공유 기능</p>
     <div>
       <a class="project-link" href="https://github.com/jinseobYun/triplet">깃허브 이동</a>
-      <button onclick="openModal(1)">프로젝트 자세히</button>
+      <button class="project-link" onclick="openModal(1)">프로젝트 자세히</button>
     </div>
 
   </div>
